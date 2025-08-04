@@ -1,11 +1,102 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Flash ESP32 Firmware</title>
-    <script type="module" src="https://unpkg.com/esp-web-tools@10.0.0/dist/web/install-button.js"></script>
-  </head>
-  <body>
-    <h2>Upload Firmware DragonFlySpirit</h2>
-    <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
-  </body>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DragonFlySpirit Flasher - Cyberpunk Style</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10.0.0/dist/web/install-button.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #e0e0ff;
+      font-family: 'Orbitron', monospace, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff00de;
+      text-shadow:
+        0 0 5px #ff00de,
+        0 0 10px #ff00de,
+        0 0 20px #ff00de,
+        0 0 40px #ff00de;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      color: #00fff7;
+      margin-top: 0;
+      margin-bottom: 2em;
+      text-shadow: 0 0 8px #00fff7;
+    }
+
+    esp-web-install-button {
+      --button-background: #ff00de;
+      --button-color: #0f0c29;
+      --button-hover-background: #00fff7;
+      --button-hover-color: #0f0c29;
+      --button-font-size: 1.2rem;
+      --button-padding: 1rem 2.5rem;
+      --button-border-radius: 12px;
+      --button-box-shadow: 0 0 10px #ff00de;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
+
+    esp-web-install-button:hover {
+      --button-background: #00fff7;
+      --button-color: #0f0c29;
+      --button-box-shadow: 0 0 20px #00fff7;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 0.9rem;
+      color: #555577;
+      user-select: text;
+      font-family: 'Courier New', Courier, monospace;
+      text-shadow: none;
+    }
+
+    /* เพิ่มเอฟเฟกต์ flicker เล็กน้อย */
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+
+    h1 {
+      animation: flicker 3s infinite;
+    }
+
+    esp-web-install-button {
+      animation: flicker 5s infinite;
+    }
+  </style>
+</head>
+<body>
+  <h1>DragonFlySpirit Flasher</h1>
+  <h2>Flash Firmware ลง ESP32-C3 SuperMini</h2>
+  <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+
+  <footer>
+    Developed by Chanakrit Ketwarin
+  </footer>
+</body>
 </html>
